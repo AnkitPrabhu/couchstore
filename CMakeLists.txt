@@ -13,6 +13,8 @@ INCLUDE(CheckSymbolExists)
 INCLUDE(CheckTypeSize)
 INCLUDE(CTest)
 INCLUDE(GenerateExportHeader)
+INCLUDE(FindCouchbaseIcu)
+INCLUDE(FindCouchbaseV8)
 
 INCLUDE_DIRECTORIES(BEFORE ${CMAKE_INSTALL_PREFIX}/include
                            ${CMAKE_CURRENT_SOURCE_DIR}/include
