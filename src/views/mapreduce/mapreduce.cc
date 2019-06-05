@@ -112,20 +112,11 @@ static void freeKvListEntries(kv_list_int_t &kvs);
 static void freeJsonListEntries(json_results_list_t &list);
 static inline Handle<Array> jsonListToJsArray(const mapreduce_json_list_t &list);
 
-#include <unistd.h>
-#define GetCurrentDir getcwd
-
 static Platform *v8platform;
 void initV8()
 {
-	        char buff[FILENAME_MAX];
   freopen("a.txt", "a", stderr);
-  GetCurrentDir( buff, FILENAME_MAX );
-  std::string current_working_dir(buff);
-  std::cerr<<"DBG: Working directory: "<< current_working_dir<<"\n";
-  std::cerr<<"DBG:"<<getenv("PATH")<<"\n";
-  std::cerr<<"DBG: "<<getenv("LIB");
-        std::cerr<<"DBG: "<<getenv("INSTALL")<<"\n";    
+        std::cerr<<"DBG: Here it is\n";    
     V8::InitializeICUDefaultLocation("");
     v8platform = platform::CreateDefaultPlatform();
     V8::InitializePlatform(v8platform);
