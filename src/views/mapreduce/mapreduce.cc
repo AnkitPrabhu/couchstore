@@ -115,9 +115,10 @@ static inline Handle<Array> jsonListToJsArray(const mapreduce_json_list_t &list)
 static Platform *v8platform;
 void initV8()
 {
-  freopen("a.txt", "a", stderr);
-        std::cerr<<"DBG: Here it is\n";    
-    V8::InitializeICUDefaultLocation("");
+    std::string RootDir = std::string(getenv("ROOTDIR")) + std::string("/../");
+    freopen("xyz.txt", "a", stderr);
+    std::cerr<<"DBG: "<< RootDir <<"\n";
+    V8::InitializeICUDefaultLocation(RootDir.c_str());
     v8platform = platform::CreateDefaultPlatform();
     V8::InitializePlatform(v8platform);
     V8::Initialize();
